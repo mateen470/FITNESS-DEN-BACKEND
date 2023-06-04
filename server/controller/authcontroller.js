@@ -10,7 +10,7 @@ const AuthControllerFunctions = {
       if (!name || !email || !password) {
         return await res
           .status(400)
-          .json({ success: false, message: "PLEASE FILL IN ALL FIELDS!!" });
+          .json({ success: false, message: "PLEASE FILL IN ALL FIELDS!!!" });
       }
       const userAlreadyExist = await User.findOne({ email });
 
