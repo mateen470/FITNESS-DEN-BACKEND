@@ -37,19 +37,21 @@ const AuthControllerFunctions = {
 
         const clientSideActivationPageLink = `${process.env.CLIENT_SIDE_URL}/fitness-den/activation/${activationToken}`;
 
-        const message = `<div style="max-width: 700px; margin:auto; border: 10px solid #ddd; padding: 50px 20px; font-size: 110%;">
-      <h2 style="text-align: center; text-transform: uppercase;color: teal;">Welcome to the ✮FITNESS DEN✮</h2>
-      <p>Congratulations! You're almost set to start using ✮FITNESS DEN✮
-          Just click the button below to validate your email address.
-      </p>
-      
-      <a href=${clientSideActivationPageLink} style="background: crimson; text-decoration: none; color: white; padding: 10px 20px; margin: 10px 0; display: inline-block;">VERIFY EMAIL!</a>
-  
-      <p>If the button doesn't work for any reason, you can also click on the link below:</p>
-  
-      <div>${clientSideActivationPageLink}</div>
-      </div>
-  `;
+        const message = `<div style="max-width: 700px; margin: auto;border-radius:10px; padding: 50px 20px; font-size: 110%; text-align: center; background-image:  linear-gradient(
+          to bottom left,
+          #29084d,
+          #830d5c80,
+          #191919
+        ); font-family: 'Poppins', sans-serif; color: #ffffff;">
+        <h2 style="color: white;font-size:2.2rem">Welcome to the FITNESS DEN</h2>
+        <p style="color: white;font-size:1rem">Congratulations! You're almost set to start using FITNESS DEN Just click the button below to validate your email address.</p>
+        
+        <a href=${clientSideActivationPageLink} style="background: crimson; text-decoration: none; color: white; padding: 10px 20px; margin: 10px 0; display: inline-block; border-radius: 3px; font-weight: bold;">VERIFY EMAIL!</a>
+    
+        <p style="color: white;font-size:1rem">If the button doesn't work for any reason, you can also click on the link below:</p>
+    
+        <div style="word-break: break-word;"><a href="${clientSideActivationPageLink}" style="color: white; text-decoration: none;">${clientSideActivationPageLink}</a></div>
+    </div>`;
 
         sendEmail({
           to: newUserData.email,
@@ -252,15 +254,20 @@ const AuthControllerFunctions = {
 
       const clientSideResetPasswordPageLink = `${process.env.CLIENT_SIDE_URL}/fitness-den/reset-password/${accessTokenForgotPassword}`;
 
-      const message = ` <div style="max-width: 700px; margin:auto; border: 10px solid #ddd; padding: 50px 20px; font-size: 110%;">
-      <h2 style="text-align: center; text-transform: uppercase;color: teal;">Welcome to the ✮FITNESS DEN✮</h2>
-      <p>
+      const message = ` <div style="max-width: 700px; margin: auto;border-radius:10px; padding: 50px 20px; font-size: 110%; text-align: center; background-image:  linear-gradient(
+        to bottom left,
+        #29084d,
+        #830d5c80,
+        #191919
+      ); font-family: 'Poppins', sans-serif; color: #ffffff;">
+      <h2 style="color: white;font-size:2.2rem">Welcome to the FITNESS DEN</h2>
+      <p  style="color: white;font-size:1rem">
           Just click the button below to reset your password.
       </p>
       
       <a href=${clientSideResetPasswordPageLink} style="background: blue; text-decoration: none; color: white; padding: 10px 20px; margin: 10px 0; display: inline-block;">RESET PASSWORD!</a>
   
-      <p>If the button doesn't work for any reason, you can also click on the link below:</p>
+      <p style="color: white;font-size:1rem">If the button doesn't work for any reason, you can also click on the link below:</p>
   
       <div>${clientSideResetPasswordPageLink}</div>
       </div>`;
