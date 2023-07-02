@@ -15,13 +15,16 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 
 const app = express();
-
-app.use(cors({
-  origin: 'https://fitness-den.netlify.app',
-  credentials: true,
-  allowedHeaders: ['Origin, X-Requested-With, Content-Type, Accept, content-type, application/json'],
-  methods: ['GET, PUT, POST, DELETE, OPTIONS']
-}));
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+    allowedHeaders: [
+      "Origin, X-Requested-With, Content-Type, Accept, content-type, application/json",
+    ],
+    methods: ["GET, PUT, POST, DELETE, OPTIONS"],
+  })
+);
 
 app.use(express.json());
 app.use(cookieParser());
