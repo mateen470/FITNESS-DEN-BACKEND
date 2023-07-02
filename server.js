@@ -16,31 +16,31 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
-app.use(cors());
-// app.use(
-//   cors((req, callback) => {
-//     const allowedOrigins = ["https://fitness-den.netlify.app"];
-//     const origin = req.headers.origin;
-
-//     if (allowedOrigins.includes(origin)) {
-//       callback(null, { origin: true, credentials: true });
-//     } else {
-//       callback(new Error("Not allowed by CORS"));
-//     }
-//   })
-// );
+app.use(cors({
+  origin: 'https://fitness-den.netlify.app',
+  credentials: true,
+  allowedHeaders: ['Origin, X-Requested-With, Content-Type, Accept, content-type, application/json'],
+  methods: ['GET, PUT, POST, DELETE, OPTIONS']
+}));
 
 app.use(express.json());
 app.use(cookieParser());
+
 app.use("/fitness-den", authRouter);
 app.use("/fitness-den/workout", workoutPlanRouter);
 app.use("/fitness-den/diet", dietPlanRouter);
 app.use("/fitness-den/payment", paymentRouter);
-app.use("/fitness-den/blog", blogRouter);
+app.use("/fitness-den", blogRouter);
 app.use("/fitness-den/product", productRouter);
 
 app.get("/", (req, res) => {
   res.json("SERVER STARTED");
+});
+
+app.use((err, req, res, next) => {
+  if (err) {
+    res.status(500).send(err);
+  }
 });
 
 app.listen(PORT, () => {
