@@ -16,19 +16,6 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
-// app.use(
-//   cors((req, callback) => {
-//     const allowedOrigins = ["https://fitness-den.netlify.app"];
-//     const origin = req.headers.origin;
-
-//     if (allowedOrigins.includes(origin)) {
-//       callback(null, { origin: true, credentials: true });
-//     } else {
-//       callback(new Error("Not allowed by CORS"));
-//     }
-//   })
-// );
-
 const whitelist = ["https://fitness-den.netlify.app"];
 const corsOptions = {
   origin: function (origin, callback) {
@@ -41,7 +28,6 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
-// app.use(cors());
 
 app.use(express.json());
 app.use(cookieParser());
