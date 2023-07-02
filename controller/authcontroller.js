@@ -145,8 +145,8 @@ const AuthControllerFunctions = {
       });
 
       await res.cookie("refreshToken", refreshToken, {
-        httpOnly: true,
-        secure: true,
+        // httpOnly: true,
+        // secure: true,
         maxAge: 7 * 24 * 60 * 60 * 1000,
       });
 
