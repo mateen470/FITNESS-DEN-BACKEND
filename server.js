@@ -17,18 +17,18 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 app.use(cors());
-app.use(
-  cors((req, callback) => {
-    const allowedOrigins = ["https://fitness-den.netlify.app"];
-    const origin = req.headers.origin;
+// app.use(
+//   cors((req, callback) => {
+//     const allowedOrigins = ["https://fitness-den.netlify.app"];
+//     const origin = req.headers.origin;
 
-    if (allowedOrigins.includes(origin)) {
-      callback(null, { origin: true, credentials: true });
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  })
-);
+//     if (allowedOrigins.includes(origin)) {
+//       callback(null, { origin: true, credentials: true });
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   })
+// );
 
 app.use(express.json());
 app.use(cookieParser());
