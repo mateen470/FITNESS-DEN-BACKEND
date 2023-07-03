@@ -202,7 +202,7 @@ const AuthControllerFunctions = {
     try {
       accessTicket = await req.cookies["refreshToken"];
       if (!accessTicket) {
-        return await res.status(400).json({
+        return await res.send({
           success: false,
           message: "UNAUTHORIZED!!",
         });
