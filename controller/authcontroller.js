@@ -252,7 +252,7 @@ const AuthControllerFunctions = {
         { id: verifiedEmail.id }
       );
 
-      const clientSideResetPasswordPageLink = `${process.env.CLIENT_SIDE_URL}/fitness-den/reset-password/${accessTokenForgotPassword}`;
+      const clientSideResetPasswordPageLink = `${process.env.CLIENT_SIDE_URL}/reset-password/${accessTokenForgotPassword}`;
 
       const message = ` <div style="max-width: 700px; margin: auto;border-radius:10px; padding: 50px 20px; font-size: 110%; text-align: center; background-image:  linear-gradient(
         to bottom left,
