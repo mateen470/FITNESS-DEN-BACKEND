@@ -58,19 +58,19 @@ This repository contains the **backend** of the **Fitness-Den MERN application**
 
 3. Create a `.env` file in the root directory and add the required environment variables:
 
-   ```
-  PORT=5000
-  DATABASE=mongodb+srv://username:password@cluster0.mongodb.net/?retryWrites=true&w=majority
-  CLIENT_SIDE_URL=https://fitness-den.netlify.app
+```
+PORT=5000
+DATABASE=mongodb+srv://username:password@cluster0.mongodb.net/?retryWrites=true&w=majority
+CLIENT_SIDE_URL=https://fitness-den.netlify.app
 
-  SECRET_KEY=sk_test_dummy_secret_key
+SECRET_KEY=sk_test_dummy_secret_key
 
-  ACTIVATION_TOKEN_SECRET_KEY=activation_dummy_secret
-  ACCESS_TOKEN_SECRET_KEY=access_dummy_secret
-  REFRESH_TOKEN_SECRET_KEY=refresh_dummy_secret
+ACTIVATION_TOKEN_SECRET_KEY=activation_dummy_secret
+ACCESS_TOKEN_SECRET_KEY=access_dummy_secret
+REFRESH_TOKEN_SECRET_KEY=refresh_dummy_secret
 
-  EMAIL_FROM=your-email@example.com
-  EMAIL_PASSWORD=your-email-password
+EMAIL_FROM=your-email@example.com
+EMAIL_PASSWORD=your-email-password
 
    ```
 
